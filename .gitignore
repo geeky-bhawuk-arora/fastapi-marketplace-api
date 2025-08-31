@@ -1,3 +1,8 @@
 node_modules
 myenv
-__pycache__
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd

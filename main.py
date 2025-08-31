@@ -3,6 +3,7 @@ from models import Product
 from sqlalchemy.orm import Session
 import database_models
 from database import SessionLocal, engine
+from database_models import Base 
 
 app = FastAPI()
 
@@ -28,6 +29,7 @@ products = [
 
 
 def init_db():
+    Base.metadata.create_all(bind=engine)
     db = SessionLocal()
 
     existing_count = db.query(database_models.Product).count()
